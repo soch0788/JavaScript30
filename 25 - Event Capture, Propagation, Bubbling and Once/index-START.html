@@ -41,8 +41,18 @@
   }
 </style>
 
-<button></button>
+<button>submit</button>
 <script>
+const divs = document.querySelectorAll('div');
+function logText(e){
+  // console.log(e.srcElement.className)
+  console.log(this.classList.value)
+  // console.log(this)
+  // e.stopPropagation()
+}
+
+divs.forEach(div => div.addEventListener('click', logText, {capture: false, once: true}));
+
 
 </script>
 </body>
