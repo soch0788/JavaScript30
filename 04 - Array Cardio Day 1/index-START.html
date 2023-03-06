@@ -36,19 +36,36 @@
       'Billings, Josh', 'Birrell, Augustine', 'Blair, Tony', 'Beecher, Henry', 'Biondo, Frank'
     ];
     
+    
     // Array.prototype.filter()
     // 1. Filter the list of inventors for those who were born in the 1500's
+      const inventors1500 = inventors.filter(inventors => (inventors.year>1499 && inventors.year<1600))
+      console.table(inventors1500)
 
     // Array.prototype.map()
     // 2. Give us an array of the inventors first and last names
+      const inventorMap = inventors.map(a => a.first + " " + a.last)
+      console.log(2, inventorMap)
 
     // Array.prototype.sort()
     // 3. Sort the inventors by birthdate, oldest to youngest
 
+      const inventorSort = inventors.sort((a,b) => a.year - b.year)
+      console.table(inventorSort)
+
+
     // Array.prototype.reduce()
     // 4. How many years did all the inventors live all together?
+      const inventorReduce = inventors.reduce(
+        (accumulator, inventors) => accumulator + (inventors.passed-inventors.year),0);
+      console.log(4, inventorReduce)
+                              
+
 
     // 5. Sort the inventors by years lived
+      inventor2 = [...inventors]
+      const inventorSort2 = [...inventors].sort((a,b) => (b.year-b.passed) - (a.year-a.passed))
+      console.log(5, inventorSort2)
 
     // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
     // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
@@ -56,10 +73,22 @@
 
     // 7. sort Exercise
     // Sort the people alphabetically by last name
+    const peoplesort = [...people].sort()
+    console.log(7, peoplesort)
 
     // 8. Reduce Exercise
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
+
+    const dataReduce = data.reduce(
+        function(obj, item) {
+          if(!obj.item) {
+            obj.item=0
+          }
+          obj.item += 1  
+        }, {});
+      console.log(4, inventorReduce)
+
 
   </script>
 </body>
